@@ -28,14 +28,14 @@
 //     console.log(err);
 //   });
 
-const Movie = require('../models/movie');
-const mongoose = require('mongoose');
+// const Movie = require('../models/movie');
+// const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/movies', {
-  keepAlive: true,
-  useNewUrlParser: true,
-  reconnectTries: Number.MAX_VALUE
-});
+// mongoose.connect('mongodb://localhost/movies', {
+//   keepAlive: true,
+//   useNewUrlParser: true,
+//   reconnectTries: Number.MAX_VALUE
+// });
 
 const movie = [
   {
@@ -51,12 +51,12 @@ const movie = [
 
 ];
 
-Movie.create(movie)
-  .then(result => {
-    console.log(result);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+// Movie.create(movie)
+//   .then(result => {
+//     console.log(result);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
 
 module.exports = movie;

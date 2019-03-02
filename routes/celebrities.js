@@ -14,12 +14,18 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/new', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
+  const { id } = req.params;
   try {
-    res.render('./celebrities/new');
+    const celebrity = await Celebrity.findById(id);
+    res.render('./celebrities/show', { celebrity });
   } catch (err) {
     next(err);
   }
+});
+
+router.get('/new', (req, res, next) => {
+  res.render('./celebrities/new');
 });
 
 router.post('/', async (req, res, next) => {
