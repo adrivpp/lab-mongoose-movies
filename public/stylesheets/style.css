@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+  display: block;
 }
+
+.index {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://wallpaperplay.com/walls/full/d/7/0/316367.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.index div {
+  padding-top: 15%;
+  padding-left: 40%;
+}
+
+.button {
+  margin-top: 50px;
+  display: block;
+  background: #FFFFFF;
+  color: #679DAD;
+  width: 30%;
+  font-size: 1.8em;
+  text-align: center;
+  border-radius: 40px;
+  height: 50px;
+  padding-top: 20px;
+}
+
+.celebrity-movies-container {
+  display: flex;
+  width: 70%;
+  margin: 100px auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.title {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.title h2, .title a {
+  text-align: center;
+}
+
+
+

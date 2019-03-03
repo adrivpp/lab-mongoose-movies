@@ -8,29 +8,29 @@ const Celebrity = require('../models/celebrity');
 router.get('/', async (req, res, next) => {
   try {
     const celebrity = await Celebrity.find();
-    res.render('./celebrities/index', { celebrity });
+    res.render('celebrities/index', { celebrity });
   } catch (err) {
     next(err);
   }
+});
+
+router.get('/create', (req, res, next) => {
+  res.render('celebrities/create');
 });
 
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const celebrity = await Celebrity.findById(id);
-    res.render('./celebrities/show', { celebrity });
+    res.render('celebrities/show', { celebrity });
   } catch (err) {
     next(err);
   }
 });
 
-router.get('/new', (req, res, next) => {
-  res.render('./celebrities/new');
-});
-
 router.post('/', async (req, res, next) => {
-  const { name, occupation, catchPhrase } = req.body;
-  const artist = { name, occupation, catchPhrase };
+  const { name, occupation, catchPhrase, image } = req.body;
+  const artist = { name, occupation, catchPhrase, image };
   try {
     if (name) {
       await Celebrity.findOneAndUpdate({ name: name }, artist);
@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
     }
     res.redirect('/celebrities');
   } catch (err) {
-    res.redirect('./celebrities/new');
+    res.redirect('celebrities/create');
   }
 });
 
@@ -57,7 +57,7 @@ router.get('/:id/edit', async (req, res, next) => {
   const { id } = req.params;
   try {
     const artist = await Celebrity.findById(id);
-    res.render('./celebrities/edit', { artist });
+    res.render('celebrities/edit', { artist });
   } catch (err) {
     next(err);
   }

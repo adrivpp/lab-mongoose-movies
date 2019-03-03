@@ -1,18 +1,24 @@
-<h2>Celebrities</h2>
+<div class="title">
+  <h2>Celebrities</h2>
+  <a href="/celebrities/create">Create a new celebrity</a>
+</div>
 
+<section class="celebrity-movies-container ceb">
   {{#each celebrity}}
-    <h3>Nombre: {{name}}</h3>    
-    <p>Ocupacion: {{occupation}}</p>    
-    <p>catchPhrase: {{catchPhrase}}</p>   
-    <a href="/celebrities/{{_id}}">See celebrity details</a>   
-    <form action="/celebrities/{{_id}}/delete" method="POST">    
-      <button type="submit">Delete celebrity</button>  
-    </form>  
-    <form action="/celebrities/{{_id}}/edit" method="GET">    
-      <button type="submit">Edit celebrity</button>  
-    </form>
+    <div class="celebrity">
+      <h3>{{name}}</h3>        
+      <a href="/celebrities/{{_id}}">See celebrity details</a>   
+      <form action="/celebrities/{{_id}}/delete" method="POST">    
+        <button type="submit">Delete celebrity</button>  
+      </form>  
+      <form action="/celebrities/{{_id}}/edit" method="GET">    
+        <button type="submit">Edit celebrity</button>  
+      </form>
+    </div>
   {{/each}}
+</section>
+  
 
-  <br>
+  
 
-<a href="/celebrities/new">Create a new celebrity</a>
+

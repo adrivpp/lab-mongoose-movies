@@ -1,16 +1,21 @@
-<h2>Movies</h2>
+<div class="title">
+  <h2>Movies</h2>
+  <a href="/movies/new">Create a new movie</a>
+</div>
 
-{{#each movie}}
-  <h3>Title: {{title}}</h3>    
-  <p>Gengre: {{genre}}</p>    
-  <p>Plot: {{plot}}</p> 
-  <a href="/movies/{{_id}}">See movie details</a>   
-    <form action="/movies/{{_id}}/delete" method="POST">    
-      <button type="submit">Delete movie</button>  
-    </form>  
-    <form action="/movies/{{_id}}/edit" method="GET">    
-      <button type="submit">Edit movie</button>  
-    </form>
-{{/each}}
-
-<a href="/movies/new">Create a new movie</a>
+<section class="celebrity-movies-container mov">
+  {{#each movie}}
+    <div>
+      <h3>Title: {{title}}</h3>    
+      <p>Gengre: {{genre}}</p>    
+      <p>Plot: {{plot}}</p> 
+      <a href="/movies/{{_id}}">See movie details</a>   
+      <form action="/movies/{{_id}}/delete" method="POST">    
+        <button type="submit">Delete movie</button>  
+      </form>  
+      <form action="/movies/{{_id}}/edit" method="GET">    
+        <button type="submit">Edit movie</button>  
+      </form>
+    </div>
+  {{/each}}
+</section>

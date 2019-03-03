@@ -14,18 +14,18 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/new', (req, res, next) => {
+  res.render('movies/new');
+});
+
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const movie = await Movie.findById(id);
-    res.render('./movies/show', { movie });
+    res.render('movies/show', { movie });
   } catch (err) {
     next(err);
   }
-});
-
-router.get('/new', (req, res, next) => {
-  res.render('./movies/new');
 });
 
 router.post('/', async (req, res, next) => {
@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
     }
     res.redirect('/movies');
   } catch (err) {
-    res.redirect('./movies/new');
+    res.redirect('movies/new');
   }
 });
 
@@ -57,7 +57,7 @@ router.get('/:id/edit', async (req, res, next) => {
   const { id } = req.params;
   try {
     const movie = await Movie.findById(id);
-    res.render('./movies/edit', { movie });
+    res.render('movies/edit', { movie });
   } catch (err) {
     next(err);
   }

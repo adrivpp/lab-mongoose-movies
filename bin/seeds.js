@@ -2,6 +2,15 @@
 
 // const Celebrity = require('../models/celebrity');
 
+// const mongoose = require('mongoose');
+// const Celebrity = require('../models/celebrity');
+
+// mongoose.connect('mongodb://localhost/movies', {
+//   keepAlive: true,
+//   useNewUrlParser: true,
+//   reconnectTries: Number.MAX_VALUE
+// });
+
 // const celebrity = [
 //   {
 //     name: 'Gustavo Cerati',
@@ -29,34 +38,27 @@
 //   });
 
 // const Movie = require('../models/movie');
-// const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/movies', {
-//   keepAlive: true,
-//   useNewUrlParser: true,
-//   reconnectTries: Number.MAX_VALUE
-// });
+// const movie = [
+//   {
+//     title: 'El dia despues de mañana',
+//     genre: 'ficcion',
+//     plot: 'nose'
+//   },
+//   {
+//     title: 'Diario de una pasión',
+//     genre: 'Drama-Romance',
+//     plot: 'sigo sin saber'
+//   }
 
-const movie = [
-  {
-    title: 'El dia despues de mañana',
-    genre: 'ficcion',
-    plot: 'nose'
-  },
-  {
-    title: 'Diario de una pasión',
-    genre: 'Drama-Romance',
-    plot: 'sigo sin saber'
-  }
+// ];
 
-];
-
-// Movie.create(movie)
-//   .then(result => {
+//  Movie.create(movie)
+//    .then(result => {
 //     console.log(result);
 //   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+//    .catch(err => {
+//      console.log(err);
+//    });
 
-module.exports = movie;
+// module.exports = celebrity;
