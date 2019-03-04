@@ -22,7 +22,7 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const celebrity = await Celebrity.findById(id);
-    res.render('celebrities/show', { celebrity });
+    res.render('celebrities/show', celebrity);
   } catch (err) {
     next(err);
   }
@@ -57,7 +57,7 @@ router.get('/:id/edit', async (req, res, next) => {
   const { id } = req.params;
   try {
     const artist = await Celebrity.findById(id);
-    res.render('celebrities/edit', { artist });
+    res.render('celebrities/edit', artist);
   } catch (err) {
     next(err);
   }

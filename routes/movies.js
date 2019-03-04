@@ -22,7 +22,7 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const movie = await Movie.findById(id);
-    res.render('movies/show', { movie });
+    res.render('movies/show', movie);
   } catch (err) {
     next(err);
   }
@@ -57,7 +57,7 @@ router.get('/:id/edit', async (req, res, next) => {
   const { id } = req.params;
   try {
     const movie = await Movie.findById(id);
-    res.render('movies/edit', { movie });
+    res.render('movies/edit', movie);
   } catch (err) {
     next(err);
   }

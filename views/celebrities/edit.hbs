@@ -1,9 +1,8 @@
 <h2>Edit your Celebrity</h2>
 
-<form method="POST" action="/celebrities/{{artist._id}}">  
-  <input type="text" name="name" value="{{artist.name}}"/>  
-  <input type="text" name="occupation" value="{{artist.occupation}}"/>
-  <input type="text" name="catchPhrase" value="{{artist.catchPhrase}}"/> 
-  <input type="text" name="image" value="{{artist.image}}"> 
+<form method="POST" action="/celebrities/{{_id}}">  
+  <input type="text" name="name" value="{{name}}"/>  
+  <input type="text" name="occupation" value="{{occupation}}"/>
+  <input type="text" name="catchPhrase" value="{{catchPhrase}}"/>   
   <button type="submit">Edit</button> 
 </form>
